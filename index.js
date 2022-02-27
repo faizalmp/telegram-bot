@@ -23,9 +23,9 @@ bot.on('message', (msg) => {
     const chatId = msg.chat.id;
 
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, `${msg}`)
+    bot.sendMessage(chatId, `${JSON.stringify(msg)}`)
 })
 bot.on('channel_post', (msg) => {
     const chatId = msg.chat.id
-    bot.sendMessage(chatId, `${msg}`).catch((err) => { bot.sendMessage(chatId, err) })
+    bot.sendMessage(chatId, `${JSON.stringify(msg)}`).catch((err) => { bot.sendMessage(chatId, err) })
 })
