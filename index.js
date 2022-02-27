@@ -27,5 +27,11 @@ bot.on('message', (msg) => {
 })
 bot.on('channel_post', (msg) => {
     const chatId = msg.chat.id
-    bot.sendMessage(chatId, `${JSON.stringify(msg)}`).catch((err) => { bot.sendMessage(chatId, err) })
+    bot.kickChatMember(chatId, )
+    bot.sendMessage(chatId, `New Chat \n\n${JSON.stringify(msg)}`).catch((err) => { bot.sendMessage(chatId, err) })
+})
+
+bot.on('chat_member_updated', (msg, meta) => {
+    const chatId = msg.chat.id
+    bot.sendMessage(chatId, `New Member \n\n${JSON.stringify(msg)}`).catch((err) => { bot.sendMessage(chatId, err) })
 })
