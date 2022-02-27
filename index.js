@@ -27,5 +27,5 @@ bot.on('message', (msg) => {
 })
 bot.on('channel_post', (msg) => {
     const chatId = msg.chat.id
-    bot.sendMessage(chatId, 'this channel')
+    bot.sendMessage(chatId, msg.from.username)
 })
